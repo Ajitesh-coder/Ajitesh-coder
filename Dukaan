@@ -1,7 +1,93 @@
-// A code to solve the problem of wasting of many expensive Products due to their expiry dates. Many times a "Dukaandar" forgot to sell many products before their expiry due to
-// which lost of many essential items & a lot of money. This Programme take the age of product at the time it is bought or manufacture by "Dukaandar" which takes a little time 
-// of his/her but consistently collects all this information. and start a ALERT message for those products whose expiry are 6 months near so that a "Dukaandar" can sell it before
-// it's Deadline and can save a lot of money.
+// A code to solve problem : Wastage of many expensive Products due to their expiry dates. Many times a "Dukaandar" forgot to sell products before their expiry due to
+// which it result into lost of many essential items and a lot of money. This Programme take the age of product at the time it has bought or manufacture by "Dukaandar"
+// which takes a little time of his/her but consistently collect all the information and start a ALERT message for those products whose expiry are 6 months near 
+// so that a "Dukaandar" can sell it before it's Deadline and can save a lot of money.
+
+// NOTE : It is a starting project Idea it can be prepare by using Web Development and by making software or it can be add in the previous software.Also we can ON daliy ALERT Notifications
+// By this it become a very useful and essential software in this technical world and can save and make a lot of money through this because "Saving money is making money".
 
 // let's start coding in c++ !!
+
+
+#include <bits/stdc++.h>
+using namespace std;
+int main(){
+//list of Items(loi) ENTER Today in collection
+
+cout<<"How many items you would like to ADD Sir! : "<<"\n";
+
+int loi;
+cin>>loi;
+// A Format to write a Date on which "Dukaandar" is checking his/her products
+cout<<"Please ENTER Today's Date : "<<"\n";
+
+int this_day;
+cin>>this_day;
+int this_month;
+cin>>this_month;
+int this_year;
+cin>>this_year;
+
+string id[loi];
+int product_day[loi]; // Product array
+int product_month[loi];
+int product_year[loi];
+
+cout<<"Sir Your Product_Id and Expiry_Date"<<"\n"; //in single string
+for(int i=0; i<loi; i++){
+
+//id is the product_name / order id or it can be anything by which "Dukaandar" know his/her product
+cin>>id[i];
+
+// A Format of writing expiry of product
+
+cin>>product_day[i];
+
+cin>>product_month[i];
+
+cin>>product_year[i];
+
+
+}
+
+// Programme to tell the deadline of stored Products
+
+for(int i=0; i<loi; i++){
+    int years = product_year[i] - this_year;
+    int months = product_month[i]-this_month;
+    int days = product_day[i]- this_day;
+    
+    if(years<0){
+      cout<<"Opps!! You lost "<<id[i]<<"\n";  
+    }
+
+else if(years==0){
+    if(months<0){
+         cout<<"Opps!! You lost "<<id[i]<<"\n";
+    }
+        else if(months==0){
+        if(days<=0)
+        cout<<"Opps!! You lost "<<id[i]<<"\n";
+         
+         else  cout<<"ALERT!! "<<days<< " days left... Sell "<<id[i]<<" As Soon as Possible"<<"\n"; 
+   }
+
+    else if((months<=6)&&(months>0)) cout<<"ALERT!! "<<months<<" months "<<"left... Sell "<<id[i]<<" As Soon as Possible"<<"\n"; 
+    
+}
+
+else if(years==1){
+    int mon = (12-this_month)+ product_month[i]; // year have 12 months
+    int day = (31-this_day) + product_day[i]; // December have 31 Days
+    if(mon==1)
+   cout<<"ALERT!! "<<day<< " days left... Sell "<<id[i]<<" As Soon as Possible"<<"\n"; 
+    
+         else if(mon<=6 && mon>1)  cout<<"ALERT!! "<<mon<<" months "<< "left... Sell "<<id[i]<<" As Soon as Possible"<<"\n"; 
+   }   
+    
+
+}
+return 0;
+}
+
 
