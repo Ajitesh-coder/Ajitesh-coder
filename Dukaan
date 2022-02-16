@@ -1,0 +1,7 @@
+// A code to solve the problem of wasting of many expensive Products due to their expiry dates. Many times a "Dukaandar" forgot to sell many products before their expiry due to
+// which lost of many essential items & a lot of money. This Programme take the age of product at the time it is bought or manufacture by "Dukaandar" which takes a little time 
+// of his/her but consistently collects all this information. and start a ALERT message for those products whose expiry are 6 months near so that a "Dukaandar" can sell it before
+// it's Deadline and can save a lot of money.
+
+// let's start coding in c++ !!
+
